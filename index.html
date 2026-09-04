@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Hub | Open Source Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🎮 Arcade Hub</h1>
+        <p>Free, open-source games running directly in your browser.</p>
+        
+        <!-- Search Bar Section -->
+        <div class="search-container">
+            <input type="text" id="gameSearch" placeholder="Search for a game..." onkeyup="filterGames()">
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Driving & Speed Section -->
+        <h2 class="section-title">🏎️ Driving & Speed</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <img src="https://unsplash.com" alt="Drift Hunters">
+                <h3>Drift Hunters</h3>
+                <a href="https://github.io" target="_blank" class="play-btn">Play Now</a>
+            </div>
+            <div class="game-card">
+                <img src="https://unsplash.com" alt="Eggy Car">
+                <h3>Eggy Car</h3>
+                <a href="https://github.io" target="_blank" class="play-btn">Play Now</a>
+            </div>
+        </div>
+
+        <!-- Action & Strategy Section -->
+        <h2 class="section-title">⚔️ Action & Arcade</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <img src="https://unsplash.com" alt="Slope">
+                <h3>Slope</h3>
+                <a href="https://github.io" target="_blank" class="play-btn">Play Now</a>
+            </div>
+            <div class="game-card">
+                <img src="https://unsplash.com" alt="1v1.LOL">
+                <h3>1v1.LOL</h3>
+                <a href="https://github.io" target="_blank" class="play-btn">Play Now</a>
+            </div>
+            <div class="game-card">
+                <img src="https://unsplash.com" alt="Hextris">
+                <h3>Hextris</h3>
+                <a href="https://github.io" target="_blank" class="play-btn">Play Now</a>
+            </div>
+        </div>
+
+        <!-- Sports Section -->
+        <h2 class="section-title">🏈 Sports Classics</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <img src="https://unsplash.com" alt="Retro Bowl">
+                <h3>Retro Bowl</h3>
+                <a href="https://github.io" target="_blank" class="play-btn">Play Now</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Arcade Hub. Built with open-source technology.</p>
+    </footer>
+
+    <!-- JavaScript for Live Filtering -->
+    <script>
+        function filterGames() {
+            let input = document.getElementById('gameSearch').value.toLowerCase();
+            let cards = document.getElementsByClassName('game-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                if (title.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
